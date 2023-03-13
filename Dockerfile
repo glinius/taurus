@@ -69,6 +69,10 @@ RUN mkdir -p /etc/bzt.d \
   && bzt -install-tools -v \
   && google-chrome-stable --version && firefox --version && dotnet --version | head -1
 
+# remove unused pem files
+WORKDIR /root/.bzt/python-packages/3.10.6/gevent/tests
+RUN rm -rf *.pem
+
 # Fix npm vulnerabilites
 WORKDIR /root/.bzt/selenium-taurus/wdio/node_modules/recursive-readdir
 RUN sed -i 's/3.0.4/3.0.8/g' package.json && npm update && npm install -g npm@latest && npm -g update
