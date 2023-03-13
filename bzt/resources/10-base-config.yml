@@ -204,6 +204,7 @@ modules:
     - jpgc-perfmon
     - jpgc-prmctl
     - jpgc-tst
+    - jpgc-cmd
     properties:
       jmeter.save.saveservice.autoflush: 'true'
       jmeter.save.saveservice.connect_time: 'true'
